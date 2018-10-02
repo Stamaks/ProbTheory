@@ -1,0 +1,86 @@
+\documentclass[]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\begin{document}
+	\begin{figure}[t]
+		\centering
+		\fontseries{b}
+		\large
+		НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ\\
+		«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»\\
+		Дисциплина: «Теория вероятностей и математическая статистика»
+	\end{figure}
+	
+	\begin{figure}[h]
+	\vspace{3in}
+	\fontseries{b}
+	\centering
+	\Huge
+	\textbf{Домашнее задание 1}\\
+	Вариант 14 
+	\end{figure}
+	
+	\vspace{2in}
+	\Large
+	\raggedleft
+	Выполнила: Карнаухова Алена,\\
+	студентка группы 172\\
+	\vspace{12pt}
+	Преподаватель: Горяинова Е.Р.,\\
+	доцент департамента матматики\\
+	факультета экономических наук
+	
+	\begin{figure}[b]
+		\centering
+		Москва \the\year
+	\end{figure}
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	\centering
+	\textbf{Задача 2.}
+	
+	\vspace{10pt}
+	
+	\raggedright
+	\large
+	
+	Вероятность выигрыша по лотерейному билету равна P = 0,1. Сколько билетов нужно приобрести, чтобы выигрыш был гарантирован с вероятностью PT = 0,9?
+	
+	\vspace{20pt}
+	
+	Вероятность ни разу не выиграть для $n$ попыток составляет $(0,9)^n$. Тогда вероятность обратного события (выиграть хотя бы раз, сделав $n$ попыток) составляет $1 - (0,9)^n$. Выигрыш должен быть гарантирован с вероятностью $0,9$. Тогда из следующего уравнения найдем количество билетов, которое нужно приобрести, чтобы такая вероятность была гарантирована.
+	
+	\vspace{10pt}
+	
+	\begin{equation}
+	1 - (0,9)^n \geq 0,9;
+	\end{equation}
+	
+	\begin{equation}
+	1 - 0,9 \geq (0,9)^n;
+	\end{equation}
+	
+	\begin{equation}
+	0,1 \geq (0,9)^n;
+	\end{equation}
+	
+	\vspace{10pt}
+	Дальше будем действовать методом подбра и выясним, что подходящее $n = 22.$
+	
+	\vspace{10pt}
+	
+	\textbf{Ответ:} 22;
+	
+	
+\end{document}

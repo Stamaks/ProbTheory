@@ -1,0 +1,76 @@
+\documentclass[]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\begin{document}
+	\begin{figure}[t]
+		\centering
+		\fontseries{b}
+		\large
+		НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ\\
+		«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»\\
+		Дисциплина: «Теория вероятностей и математическая статистика»
+	\end{figure}
+	
+	\begin{figure}[h]
+	\vspace{3in}
+	\fontseries{b}
+	\centering
+	\Huge
+	\textbf{Домашнее задание 1}\\
+	Вариант 14 
+	\end{figure}
+	
+	\vspace{2in}
+	\Large
+	\raggedleft
+	Выполнила: Карнаухова Алена,\\
+	студентка группы 172\\
+	\vspace{12pt}
+	Преподаватель: Горяинова Е.Р.,\\
+	доцент департамента матматики\\
+	факультета экономических наук
+	
+	\begin{figure}[b]
+		\centering
+		Москва \the\year
+	\end{figure}
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	\centering
+	\large
+	\textbf{Задача 1.}
+	
+	\vspace{10pt}
+	
+	\raggedright
+
+	По каналу связи передаются 10 сигналов (вероятность искажения каждого
+из них одинакова). Из-за помех 4 из переданных сигналов при приеме искажаются. Какова
+вероятность того, что из четырех любых принятых сигналов хотя бы один – искаженный?	
+
+	\vspace{20pt}
+	
+	Всего мы выбираем 4 любых сигнала из 10. Это мы можем сделать $C_{10}^4$ способами. Нам нужно выбрать случаи, когда хотя бы один из сигналов будет искаженным, но это сложно. Найдем вероятность обратного события (ни один из 4 выбранных сигналов не искажен) и вычтем ее из 1. Неискаженных сигналов всего $10-4$ и пособов выбрать 4 из них всего $C_{10-4}^4 = C_{6}^4$. Получим:
+	
+	\begin{equation}
+	A = 1 - B = 1 - \frac{C_6^4}{C_{10}^4} = 1 - \frac{6!4!6!}{2!4!10!} = 1 - \frac{1}{14} = \frac{13}{14} \approx 0,929;
+	\end{equation}
+	
+	Где $A$ - вероятность искомого события, $B$ - вероятность обратного события.
+	
+	\vspace{10pt}
+	
+	\textbf{Ответ:} 0,929;
+	
+\end{document}
