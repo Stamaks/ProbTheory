@@ -1,0 +1,97 @@
+\documentclass[]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\begin{document}
+	\begin{figure}[t]
+		\centering
+		\fontseries{b}
+		\large
+		НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ\\
+		«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»\\
+		Дисциплина: «Теория вероятностей и математическая статистика»
+	\end{figure}
+	
+	\begin{figure}[h]
+	\vspace{3in}
+	\fontseries{b}
+	\centering
+	\Huge
+	\textbf{Домашнее задание 4}\\
+	Вариант 15 
+	\end{figure}
+	
+	\vspace{2in}
+	\Large
+	\raggedleft
+	Выполнила: Карнаухова Алена,\\
+	студентка группы 172\\
+	\vspace{12pt}
+	Преподаватель: Горяинова Е.Р.,\\
+	доцент департамента матматики\\
+	факультета экономических наук
+	
+	\begin{figure}[b]
+		\centering
+		Москва \the\year
+	\end{figure}
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	\centering
+	\Large
+	\textbf{Задача 1.}
+	
+	\vspace{10pt}
+	
+	\raggedright
+	
+	По результатам 30-ти измрения скорости $v$ получена оценка дисперсии $\tilde{\sigma}^2_v = 6 $ м$^2 / c^2$. Построить $90$ процентный доверительный интервал для неизвестных величин  - дисперсии $\sigma^2_v$ и среднего квадратичного отклонения $\sigma_v$, считая величину $v$ распределенной по нормальному закону.
+	
+	\vspace{20pt}
+	
+	По теореме Фишера случайная величина $\xi$
+	
+	\vspace{10pt}
+	
+	$$\xi = \frac{(n-1) \tilde{\sigma}^2_v}{\sigma^2}$$\\
+	
+	\vspace{10pt}
+	
+	имеет распределение $\chi^2(n-1)$. Тогда:\\
+	
+ $$P \left(  \chi^2_{\frac{1-\alpha}{2},n-1}  \leqslant \xi \leqslant\chi^2_{\frac{1+\alpha}{2},n-1}\right) =\alpha$$
+ 
+ 	Подставим $\xi$ и получим:\\
+ 	
+	 $$P \left(  \chi^2_{\frac{1-\alpha}{2},n-1}  \leqslant \frac{(n-1) \tilde{\sigma}^2_v}{\sigma^2} \leqslant\chi^2_{\frac{1+\alpha}{2},n-1}\right) =\alpha$$
+	 
+	 $$P \left( \frac{1}{\chi^2_{\frac{1+\alpha}{2},n-1}}  \leqslant \frac{\sigma^2}{(n-1)\tilde{\sigma}^2_v} \leqslant \frac{1}{\chi^2_{\frac{1-\alpha}{2},n-1}}\right) =\alpha$$	
+	 	
+	 $$P \left( \frac{\tilde{\sigma}^2_v(n-1)}{\chi^2_{\frac{1+\alpha}{2},n-1}}  \leqslant \sigma^2 \leqslant \frac{\tilde{\sigma}^2_v(n-1)}{\chi^2_{\frac{1-\alpha}{2},n-1}}\right) =\alpha$$	
+	 
+	 \vspace{10pt}
+	 
+	 Подставим значения в формулу:
+	 
+	 $$P \left( \frac{6 \cdot 29}{\chi^2_{0.95,29}}  \leqslant \sigma^2 \leqslant \frac{6 \cdot 29}{\chi^2_{0,05,29}}\right) =0,9$$	
+	 
+	 $$P \left( \frac{174}{42,557}  \leqslant \sigma^2 \leqslant \frac{174}{17,708}\right) =0,9$$	
+	 
+	 $$P \left( 4,089 \leqslant \sigma^2 \leqslant 9,826\right) =0,9$$	
+	 
+	 \textbf{Ответ:} $\sigma^2 \in \left[ 4,089 ; 9,826\right]$ 
+	
+	
+\end{document}

@@ -1,0 +1,282 @@
+	\documentclass[]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\begin{document}
+	\begin{figure}[t]
+		\centering
+		\fontseries{b}
+		\large
+		НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ\\
+		«ВЫСШАЯ ШКОЛА ЭКОНОМИКИ»\\
+		Дисциплина: «Теория вероятностей и математическая статистика»
+	\end{figure}
+	
+	\begin{figure}[h]
+	\vspace{3in}
+	\fontseries{b}
+	\centering
+	\Huge
+	\textbf{Домашнее задание 2}\\
+	Вариант 14 
+	\end{figure}
+	
+	\vspace{2in}
+	\Large
+	\raggedleft
+	Выполнила: Карнаухова Алена,\\
+	студентка группы 172\\
+	\vspace{12pt}
+	Преподаватель: Горяинова Е.Р.,\\
+	доцент департамента матматики\\
+	факультета экономических наук
+	
+	\begin{figure}[b]
+		\centering
+		Москва \the\year
+	\end{figure}
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	\centering
+	\large
+	\textbf{Задача 1.}
+	
+	\vspace{10pt}
+	
+	\raggedright
+
+	У центробежного регулятора стороны равны и составляют так называемый
+	«параллелограмм» регулятора, острый угол $\phi$ этого параллелограмма -- случайная величина,
+	равномерно распределенная в интервале $(\pi/6, \pi/4)$. Найти закон распределения диагоналей
+	параллелограмма регулятора, если его сторона равна $a$.
+
+	\vspace{20pt}
+	
+	Для начала выведем формулу зависимости длины диагонали параллелограмма от его сторон и угла. Обозначим 		длину длинной диагонали за $d_1$, длину короткой диагонали за $d_2$.
+	По теореме косинусов:
+	\begin{equation}
+	d_1^2 = a^2 + a^2 - 2 \cdot a \cdot a \cdot \cos \phi
+	\end{equation}
+	Откуда:
+	\begin{equation}
+	d_1 = a\sqrt{2(1-\cos\phi)}
+	\end{equation}
+	И:
+	\begin{equation}
+	d_2^2 = a^2 + a^2 - 2 \cdot a \cdot a \cdot \cos (\pi - \phi)
+	\end{equation}
+	Откуда:
+	\begin{equation}
+	d_2 = a\sqrt{2(1+\cos\phi)}
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	По условию $\phi$ - случайная величина, распределенная равномерно. Ее функция плотности распределения:
+	
+	\begin{equation}
+	f_\phi(x) = 
+	\begin{cases}
+	\frac{12}{\pi}, & x \in (\pi/6, \pi/4)\\
+	0, & x \notin (\pi/6, \pi/4)
+	\end{cases}
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Случайная величина $S_1(d_1(\phi) = a\sqrt{2(1-\cos\phi})$ - это длина короткой диагонали. Функция $d_1(\phi)$ гладкая и монотонно возрастает на $(\pi/6, \pi/4)$, а случайная величина $\phi$ непрерывна и имеет плотность распределения $f_\phi(x)$. Тогда плотность распределения случайной величины $S_1$ имеет следующий вид:
+	
+	\vspace{10pt}
+	
+	\begin{equation}
+	f_{S_1}(y) = f_\phi(d_1^{-1}(y)) \cdot (d_1^{-1}(y))'
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Найдем обратную функцию к функции $d_1$. Для этого решим следующее уравнение относительно $x$:
+	
+	\begin{equation}
+	w = d_1(x)
+	\end{equation}
+	
+	\begin{equation}
+	w = a\sqrt{2(1-\cos x)}
+	\end{equation}
+	
+	\begin{equation}
+	\frac{w}{a} = \sqrt{2(1-\cos x)}
+	\end{equation}
+	
+	\begin{equation}
+	\frac{w^2}{2a^2} = (1-\cos x), w > 0
+	\end{equation}
+	
+	\begin{equation}
+	x = \arccos(1 - \frac{w^2}{2a^2}), w > 0
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Подставим (11) в (6).
+	
+	\begin{equation}
+	f_{S_1}(y) = f_\phi(\arccos(1 - \frac{y^2}{2a^2})) \cdot (\arccos(1 - \frac{y^2}{2a^2}))', y > 0
+	\end{equation}
+	
+	Найдем производную:
+	
+	\begin{equation}
+	(\arccos(1 - \frac{y^2}{2a^2}))' = \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, y > 0
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Таким образом, функция плотности распределения случайной величины $S_1$:
+	
+	\begin{equation}
+	f_{S_1}(y) = 
+	\begin{cases}
+	\frac{12}{\pi} \cdot \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, & \arccos(1 - \frac{y^2}{2a^2})  \in (\pi/6, \pi/4), y > 0\\
+	0, & \arccos(1 - \frac{y^2}{2a^2}) \notin (\pi/6, \pi/4)
+	\end{cases}
+	\end{equation}
+	
+	\begin{equation}
+	f_{S_1}(y) = 
+	\begin{cases}
+	\frac{12}{\pi} \cdot \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, & 1 - \frac{y^2}{2a^2}  \in (\frac{\sqrt2}{2}, \frac{\sqrt3}{2}), y > 0\\
+	0, & 1 - \frac{y^2}{2a^2}  \in (\frac{\sqrt2}{2}, \frac{\sqrt3}{2})
+	\end{cases}
+	\end{equation}
+	
+	\vspace{50pt}
+	
+	Случайная величина $S_2(d_2(\phi) = a\sqrt{2(1+\cos\phi})$ - это длина длинной диагонали. Функция $d_2(\phi)$ гладкая и монотонно убывает на $(\pi/6, \pi/4)$, а случайная величина $\phi$ непрерывна и имеет плотность распределения $f_\phi(x)$. Тогда плотность распределения случайной величины $S_2$ имеет следующий вид:
+	
+	\vspace{10pt}
+	
+	\begin{equation}
+	f_{S_2}(y) = f_\phi(d_2^{-1}(y)) \cdot |(d_2^{-1}(y))'|
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Найдем обратную функцию к функции $d_2$. Для этого решим следующее уравнение относительно $x$:
+	
+	\begin{equation}
+	w = d_2(x)
+	\end{equation}
+	
+	\begin{equation}
+	w = a\sqrt{2(1+\cos x)}
+	\end{equation}
+	
+	\begin{equation}
+	\frac{w}{a} = \sqrt{2(1+\cos x)}
+	\end{equation}
+	
+	\begin{equation}
+	\frac{w^2}{2a^2} = (1+\cos x), w > 0
+	\end{equation}
+	
+	\begin{equation}
+	x = \arccos(\frac{w^2}{2a^2} - 1), w > 0
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Подставим (21) в (16).
+	
+	\begin{equation}
+	f_{S_2}(y) = f_\phi(\arccos(\frac{y^2}{2a^2} - 1)) \cdot |(\arccos(\frac{y^2}{2a^2} - 1))'|, y > 0
+	\end{equation}
+	
+	Найдем производную:
+	
+	\begin{equation}
+	(\arccos(\frac{y^2}{2a^2} - 1))' = - \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, y > 0
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	Таким образом, функция плотности распределения случайной величины $S_2$:
+	
+	\begin{equation}
+	f_{S_2}(y) = 
+	\begin{cases}
+	\frac{12}{\pi} \cdot \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, & \arccos(\frac{y^2}{2a^2} - 1)  \in (\pi/6, \pi/4), y > 0\\
+	0, & \arccos(\frac{y^2}{2a^2} - 1) \notin (\pi/6, \pi/4)
+	\end{cases}
+	\end{equation}
+	
+	\begin{equation}
+	f_{S_2}(y) = 
+	\begin{cases}
+	\frac{12}{\pi} \cdot \frac{2}{\sqrt{4 a ^ 2 - y ^ 2}}, & \frac{y^2}{2a^2} -1  \in (\frac{\sqrt2}{2}, \frac{\sqrt3}{2}), y > 0\\
+	0, & \frac{y^2}{2a^2} - 1 \in (\frac{\sqrt2}{2}, \frac{\sqrt3}{2})
+	\end{cases}
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	\vspace{20pt}
+	
+	\centering
+	\textbf{Задача 2.}
+	
+	\vspace{10pt}
+	
+	\raggedright
+	\large
+	
+	В Москве рождается каждый день в среднем 335 детей, т.е. в год около
+	122500 детей. Считая вероятность рождения мальчика 0.51, найти вероятность того, что число
+	мальчиков, которые родятся в Москве в текущем году, превысит число девочек не менее, чем
+	на 1500.
+	
+	\vspace{20pt}
+	
+	Пусть мальчков родится $x$. Тогда девочек родится $122500 - x$. Хотим, чтобы:
+	
+	\begin{equation}
+	x - (122500 - x) \geq 1500;
+	\end{equation}
+	
+	\begin{equation}
+	2x \geq 124000;
+	\end{equation}
+	
+	\begin{equation}
+	x \geq 62000;
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	То есть, надо посчитать вероятность $P(62000 \leq x \leq 122500)$. Зная, что число детей n достаточно велико, воспользуемся интегральной теоремой Лапласа.
+	
+	\begin{equation}
+	(k_1 \leq x \leq k_2) \approx \Phi (\frac{k_2 - np}{\sqrt{npq}}) - \Phi (\frac{k_1 - np}{\sqrt{npq}})
+	\end{equation}
+	
+	\vspace{10pt}
+	
+	$$(62000 \leq x \leq 122500) \approx \Phi (\frac{122500 - 122500 \cdot 0.51}{\sqrt{122500 \cdot 0.51 \cdot 0.49}}) - \Phi (\frac{62000 - 122500 \cdot 0.51}{\sqrt{122500 \cdot 0.51 \cdot 0.49}}) = $$\\
+	
+	$$ = \Phi(\frac{60025}{174.96}) - \Phi(\frac{-475}{174.96}) = \Phi(343) - \Phi(-2.7) = 0.5 + \Phi(2.7) =  0.9965$$
+	
+	\vspace{10pt}
+	
+	\textbf{Ответ:} 0.9965;
+	
+\end{document}
